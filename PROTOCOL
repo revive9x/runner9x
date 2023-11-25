@@ -1,0 +1,25 @@
+Server starts listening.
+Win9X client connects.
+
+
+SERVER	   |       CLIENT
+	   | <- HELLO
+ACK ->	   |
+
+
+The client is now listening for commands from the server.
+
+RUN {FILE_SIZE}:
+
+SERVER	      |       CLIENT
+RUN (bytes) ->|
+	      | <- ACK / NACK
+	      
+9X client accepts the request:
+- kill the previous process
+- write the file to executable to the %TEMP% directory
+- execute the new program
+
+SERVER	      |       CLIENT
+SUBKILL    -> |
+              | <- ACK / NACK
